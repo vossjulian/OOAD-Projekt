@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.*?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<SplitPane xmlns:fx="http://javafx.com/fxml/1" dividerPositions="0.7328947368421053" prefHeight="396.0"
+           prefWidth="762.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+           fx:controller="de.hsos.ooadproject.controller.StockDetailsController">
+    <items>
+        <AnchorPane minHeight="200.0" minWidth="500.0" prefHeight="400.0" prefWidth="500.0">
+            <LineChart fx:id="lineChart" layoutX="7.0" layoutY="71.0" prefHeight="324.0" prefWidth="508.0"
+                       AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                       AnchorPane.topAnchor="100.0">
+                <xAxis>
+                    <CategoryAxis side="BOTTOM"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis side="LEFT"/>
+                </yAxis>
+            </LineChart>
+            <Label alignment="CENTER" layoutX="186.0" layoutY="12.0" text="Aktienübersicht" AnchorPane.leftAnchor="14.0"
+                   AnchorPane.rightAnchor="14.0">
+                <font>
+                    <Font name="System Bold" size="20.0"/>
+                </font>
+            </Label>
+            <MFXButton buttonType="RAISED" layoutX="14.0" layoutY="13.0" mnemonicParsing="false"
+                       onAction="#navigateBack" prefHeight="25.0" prefWidth="65.0"
+                       style="-fx-background-color: #414BB2;" text="Zurück" textFill="WHITE"
+                       AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0"/>
+            <HBox layoutX="79.0" layoutY="75.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+                <children>
+                    <MFXButton mnemonicParsing="false" onAction="#setHistoryLastWeek"
+                               style="-fx-background-color: #414BB2;" text="1 Woche" textFill="WHITE"/>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <MFXButton mnemonicParsing="false" onAction="#setHistoryLastMonth"
+                               style="-fx-background-color: #414BB2;" text="1 Monat" textFill="WHITE"/>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <MFXButton mnemonicParsing="false" onAction="#setHistoryLastSixMonth"
+                               style="-fx-background-color: #414BB2;" text="6 Monate" textFill="WHITE"/>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <MFXButton mnemonicParsing="false" onAction="#setHistoryLastYear"
+                               style="-fx-background-color: #414BB2;" text="1 Jahr" textFill="WHITE"/>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <MFXButton mnemonicParsing="false" onAction="#setHistoryLastThreeYear"
+                               style="-fx-background-color: #414BB2;" text="3 Jahre" textFill="WHITE"/>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <MFXButton mnemonicParsing="false" onAction="#setHistoryLastFiveYear"
+                               style="-fx-background-color: #414BB2;" text="5 Jahre" textFill="WHITE"/>
+                </children>
+            </HBox>
+        </AnchorPane>
+        <AnchorPane maxWidth="250.0" minHeight="0.0" minWidth="250.0" prefHeight="250.0" prefWidth="250.0">
+            <MFXButton buttonType="RAISED" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#stockBuy"
+                       prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #496F22;" text="Kaufen"
+                       textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="100.0"/>
+            <MFXButton buttonType="RAISED" layoutX="121.0" layoutY="355.0" mnemonicParsing="false" onAction="#stockSell"
+                       style="-fx-background-color: #B54138;" text="Verkaufen" textFill="WHITE"
+                       AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0"/>
+            <Label fx:id="lbStockName" alignment="CENTER" layoutX="20.0" layoutY="14.0" text="Aktie"
+                   AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                <font>
+                    <Font size="20.0"/>
+                </font>
+            </Label>
+            <Label layoutX="65.0" layoutY="64.0" text="Symbol" AnchorPane.leftAnchor="14.0"
+                   AnchorPane.rightAnchor="100.0">
+                <font>
+                    <Font name="System Bold" size="14.0"/>
+                </font>
+            </Label>
+            <Label layoutX="77.0" layoutY="99.0" text="Zeit" AnchorPane.leftAnchor="14.0"
+                   AnchorPane.rightAnchor="100.0">
+                <font>
+                    <Font name="System Bold" size="14.0"/>
+                </font>
+            </Label>
+            <Label layoutX="67.0" layoutY="134.0" text="Vortag" AnchorPane.leftAnchor="14.0"
+                   AnchorPane.rightAnchor="100.0">
+                <font>
+                    <Font name="System Bold" size="14.0"/>
+                </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="175.0" text="Bid" AnchorPane.leftAnchor="14.0"
+                   AnchorPane.rightAnchor="100.0">
+                <font>
+                    <Font name="System Bold" size="14.0"/>
+                </font>
+            </Label>
+            <Label layoutX="78.0" layoutY="212.0" text="Ask" AnchorPane.leftAnchor="14.0"
+                   AnchorPane.rightAnchor="100.0">
+                <font>
+                    <Font name="System Bold" size="14.0"/>
+                </font>
+            </Label>
+            <Label layoutX="84.0" layoutY="248.0" text="\%" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="100.0">
+                <font>
+                    <Font name="System Bold" size="14.0"/>
+                </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="286.0" prefHeight="0.0" prefWidth="22.0" text="+/-"
+                   AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="100.0">
+                <font>
+                    <Font name="System Bold" size="14.0"/>
+                </font>
+            </Label>
+            <Label fx:id="lbSymbol" layoutX="173.0" layoutY="65.0" text="Label" AnchorPane.leftAnchor="120.0"
+                   AnchorPane.rightAnchor="14.0"/>
+            <Label fx:id="lbVortag" layoutX="173.0" layoutY="135.0" text="Label" AnchorPane.leftAnchor="120.0"
+                   AnchorPane.rightAnchor="14.0"/>
+            <Label fx:id="lbBid" layoutX="173.0" layoutY="176.0" text="Label" AnchorPane.leftAnchor="120.0"
+                   AnchorPane.rightAnchor="14.0"/>
+            <Label fx:id="lbAsk" layoutX="173.0" layoutY="213.0" text="Label" AnchorPane.leftAnchor="120.0"
+                   AnchorPane.rightAnchor="14.0"/>
+            <Label fx:id="lbPercent" layoutX="173.0" layoutY="249.0" text="Label" AnchorPane.leftAnchor="120.0"
+                   AnchorPane.rightAnchor="14.0"/>
+            <Label fx:id="lbPlusMinus" layoutX="173.0" layoutY="287.0" text="Label" AnchorPane.leftAnchor="120.0"
+                   AnchorPane.rightAnchor="14.0"/>
+            <Label fx:id="lbTime" layoutX="173.0" layoutY="100.0" text="Label" AnchorPane.leftAnchor="120.0"
+                   AnchorPane.rightAnchor="14.0"/>
+        </AnchorPane>
+    </items>
+</SplitPane>

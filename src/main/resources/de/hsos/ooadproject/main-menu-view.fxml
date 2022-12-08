@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<HBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT"
+      style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/15.0.1"
+      fx:controller="de.hsos.ooadproject.controller.MainMenuController">
+    <opaqueInsets>
+        <Insets/>
+    </opaqueInsets>
+    <MFXButton buttonType="RAISED" onAction="#showWatchList" prefHeight="40.0" prefWidth="200.0"
+               style="-fx-background-color: #414BB2; -fx-text-fill: white;" text="Aktien-Watchlist">
+        <HBox.margin>
+            <Insets bottom="8.0" left="8.0" top="8.0"/>
+        </HBox.margin>
+    </MFXButton>
+    <MFXButton buttonType="RAISED" onAction="#showStockList" prefHeight="40.0" prefWidth="200.0"
+               style="-fx-background-color: #414BB2; -fx-text-fill: white;" text="Alle Aktien">
+        <HBox.margin>
+            <Insets bottom="8.0" left="8.0" top="8.0"/>
+        </HBox.margin>
+    </MFXButton>
+    <MFXButton buttonType="RAISED" onAction="#showPortfolio" prefHeight="40.0" prefWidth="200.0"
+               style="-fx-background-color: #414BB2; -fx-text-fill: white;" text="Portfolio">
+        <HBox.margin>
+            <Insets bottom="8.0" left="8.0" top="8.0"/>
+        </HBox.margin>
+    </MFXButton>
+
+    <Pane HBox.hgrow="ALWAYS"/>
+
+    <Pane HBox.hgrow="ALWAYS"/>
+
+    <MFXButton buttonType="FLAT" text="">
+        <graphic>
+            <FontIcon accessibleRole="BUTTON" fill="#573f3f" iconColor="#414BB2" iconLiteral="mdoal-account_circle"
+                      iconSize="32" selectionFill="#bebebe"/>
+        </graphic>
+        <HBox.margin>
+            <Insets bottom="8.0" left="8.0" top="8.0"/>
+        </HBox.margin>
+    </MFXButton>
+</HBox>

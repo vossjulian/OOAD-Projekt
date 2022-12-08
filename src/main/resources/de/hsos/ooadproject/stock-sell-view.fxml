@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<?import java.lang.Integer?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="350.0" prefWidth="300.0"
+            style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/18"
+            fx:controller="de.hsos.ooadproject.controller.StockSellController">
+    <children>
+        <Label layoutX="30.0" layoutY="30.0" text="Aktienverkauf">
+            <font>
+                <Font name="System Bold" size="24.0"/>
+            </font>
+        </Label>
+        <Label layoutX="30.0" layoutY="90.0" text="Aktie">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </Label>
+        <Label layoutX="30.0" layoutY="130.0" text="Anzahl">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </Label>
+        <Label layoutX="30.0" layoutY="170.0" text="Verkauf (Ask)">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </Label>
+        <Label layoutX="30.0" layoutY="210.0" text="Betrag">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </Label>
+        <Label fx:id="lbStockName" layoutX="170.0" layoutY="92.0" prefHeight="17.0" prefWidth="85.0" text="Label"/>
+        <Label fx:id="lbAsk" layoutX="170.0" layoutY="172.0" prefHeight="17.0" prefWidth="85.0" text="Label"/>
+        <Label fx:id="lbAmount" layoutX="170.0" layoutY="212.0" prefHeight="17.0" prefWidth="85.0" text="Label"/>
+        <fx:define>
+            <Integer fx:id="min" fx:value="0"/>
+            <Integer fx:id="max" fx:value="10"/>
+        </fx:define>
+        <Spinner fx:id="spAmount" min="$min" max="$max" initialValue="3" layoutX="170.0" layoutY="128.0"
+                 prefHeight="17.0"
+                 prefWidth="85.0">
+        </Spinner>
+        <MFXButton layoutX="50.0" layoutY="270.0" mnemonicParsing="false" onAction="#sellStock" prefHeight="35.0"
+                   prefWidth="85.0" style="-fx-background-color: #414BB2;" text="OK" textFill="WHITE"/>
+        <MFXButton layoutX="155.0" layoutY="270.0" mnemonicParsing="false" onAction="#cancel" prefHeight="35.0"
+                   prefWidth="85.0" style="-fx-background-color: #414BB2;" text="Cancel" textFill="WHITE"/>
+    </children>
+</AnchorPane>
