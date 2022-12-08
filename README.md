@@ -1,5 +1,5 @@
 ## Objektorientierte Analyse und Design - Projekt
-### Thema: JavaFX
+### Thema: Aktienverwaltung mit JavaFX
 
 ![Screenshot](P1.PNG)
 ![Screenshot](P2.PNG)
